@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uottawa.hackathon">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
             <meta-data
                 android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyC_N4MBaoKzxvtK05m2CqATLC0mO8zYKYY"/>
+                android:value="AIzaSyC_N4MBaoKzxvtK05m2CqATLC0mO8zYKYY" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".patientinfo"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity android:name=".patientinfo" />
+        <activity android:name=".cameratextrec"></activity>
     </application>
 
 </manifest>
